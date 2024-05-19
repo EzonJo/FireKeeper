@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../images/product-background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    display: flex;
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: whitesmoke;
+    box-shadow: 0 5px 10px rbga(0,0,0,.1);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo img {
+    height: 4rem;
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 18px;
+    padding: 18px;
+    border-radius: 3px;
+    color: #333;
+    display: block;
+}
+
+header .navbar ul li a:hover {
+    background: #333;
+    color: #fff;
+}
+
+a.active,a:hover {
+	border: none;
+    transition: all 0.3s ease 0s;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: none;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+    margin-top: 68px;
+}
+
+.content-section {
+    float: left;
+    width: 55%;
+}
+
+.image-section {
+    float: right;
+    width: 40%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+
+.content-section .title {
+    text-transform: uppercase;
+    font-size: clamp(1.1875rem, 0.4844rem + 2.25vw, 1.75rem);
+}
+
+.content-section .content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: clamp(1.125rem, 0.8906rem + 0.75vw, 1.3125rem);
+}
+
+.content-section .content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+    line-height: 1.5;
+}
+
+.content-section .content .button {
+    margin-top: 30px;
+}
+
+.content-section .content .button a{
+    background-color: #3d3d3d;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: clamp(1.125rem, 0.8125rem + 1vw, 1.375rem);
+    letter-spacing: 1.5px;
+}
+
+.content-section .content .button a:hover {
+    background-color: #2378e8;
+    color: #fff;
+}
+
+/* This media query is for responsive content*/
+@media screen and (max-width: 780px){   
+    .container {
+        width: 80%;
+        display: block;
+        margin: auto;
+        margin-top: 68px;
+        padding-top: 50px;
+    } 
+    .content-section {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image-section {
+        float: none;
+        width: 100%;
+    }
+    .image-section img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: auto;
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+    .content-section .title {
+        text-align: center;
+    }
+    .content-section .content .button {
+        text-align: center;
+    }
+    .content-section .content .button a {
+        padding: 9px 30px;
+    }
+}
+
+/* This media query is for responsive navigation bar*/
+@media (max-width:600px){
+    header {
+        padding: 18px;
+    }
+    header .logo img {
+        height: 3rem;
+    }
+    header label {
+        display: initial;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: whitesmoke;
+        border-top: 1px solid rgba(0,0,0,.1);
+        display: none;
+    }
+    header .navbar ul li {
+        width: 100%;
+    }
+    header .navbar ul li a {
+        font-size: 18px;
+    }
+    #menu-bar:checked ~ .navbar {
+        display: initial;
+    }
+    .container {
+        margin-top: 72px;
+    }
+}

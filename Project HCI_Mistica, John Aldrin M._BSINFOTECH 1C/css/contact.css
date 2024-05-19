@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../images/product-background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    display: flex;
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: whitesmoke;
+    box-shadow: 0 5px 10px rbga(0,0,0,.1);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo img{
+    height: 4rem;
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 18px;
+    padding: 18px;
+    border-radius: 3px;
+    color: #333;
+    display: block;
+}
+
+header .navbar ul li a:hover {
+    background: #333;
+    color: #fff;
+}
+
+a.active,a:hover {
+	border: none;
+    transition: all 0.3s ease 0s;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+.container {
+    width: 80%;
+    display: block;
+    margin: 50px auto;
+    padding-top: 70px;
+    font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+}
+
+.contact-box {
+    background: #fff;
+    display: flex;
+}
+
+.contact-left {
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.contact-right {
+    flex-basis: 40%;
+    padding: 40px;
+    background: #24252A;
+    color: #fff;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.container p {
+    margin-bottom: 40px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-row .input-group {
+    flex-basis: 45%;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input-group label {
+    margin-bottom: 6px;
+    display: block;
+    color: #24252A;
+}
+
+button {
+    background: #24252A;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px rbga(28,0,181,0.3);
+}
+
+.contact-left h3 {
+    color:#24252A;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.contact-right h3 {
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+tr td:first-child {
+    padding-right: 20px;
+}
+
+tr td {
+    padding-top: 20px;
+}
+
+/* This media query is for responsive content*/
+@media screen and (max-width: 1150px){
+    .container {
+        width: 80%;
+        display: block;
+        margin: auto;
+        margin-top: 68px;
+        padding-top: 50px;
+    } 
+    .contact-box {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .contact-left .contact-right {
+        float: none;
+        width: 100%;
+    }
+    .contact-right {
+        padding-bottom: 50px;
+    }
+}
+
+/* This media query is for responsive navigation bar*/
+@media (max-width:600px){
+    header {
+        padding: 18px;
+    }
+    header .logo img {
+        height: 3rem;
+    }
+    header label {
+        display: initial;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: whitesmoke;
+        border-top: 1px solid rgba(0,0,0,.1);
+        display: none;
+    }
+    header .navbar ul li {
+        width: 100%;
+    }
+    header .navbar ul li a {
+        font-size: 18px;
+    }
+    #menu-bar:checked ~ .navbar {
+        display: initial;
+    }
+}
